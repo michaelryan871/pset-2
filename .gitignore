@@ -3,3 +3,4 @@
 .settings/
 bin/
 src/ProblemSet2_Solution.java
+*.class
