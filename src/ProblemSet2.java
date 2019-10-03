@@ -90,6 +90,17 @@ public class ProblemSet2 {
          */
 
 
+         System.out.print("\nEnter a diameter: ");
+         double circleDiameter = in.nextDouble();
+         in.nextLine();
+
+         double radiusCircle = circleDiameter / 2;
+         double areaCircle = Math.PI * (Math.pow(radiusCircle, 2));
+         double circumferenceCircle =  2 * Math.PI * radiusCircle;
+
+         System.out.println("\nAREA          : " + String.format("%.2f", areaCircle));
+         System.out.println("CIRCUMFERENCE : " + String.format("%.2f", circumferenceCircle));
+
 
         /*
          * Exercise 7.
@@ -97,6 +108,20 @@ public class ProblemSet2 {
          * Given a length and width, print the area, perimeter, and diagonal of the
          * corresponding rectangle.
          */
+
+         System.out.print("\nEnter a length: ");
+         double rectangleLength = in.nextDouble();
+         System.out.print("Enter a width: ");
+         double rectangleWidth = in.nextDouble();
+         in.nextLine();
+
+         double perimeterRectangle = (rectangleLength * 2) + (rectangleWidth * 2);
+         double areaRectangle = rectangleLength * rectangleWidth;
+         double diagonalRectangle = Math.sqrt(Math.pow(rectangleLength, 2) + Math.pow(rectangleWidth, 2));
+
+         System.out.println("\nAREA      : " + String.format("%.2f", areaRectangle));
+         System.out.println("PERIMETER : " + String.format("%.2f", perimeterRectangle));
+         System.out.println("DIAGONAL  : " + String.format("%.2f", diagonalRectangle));
 
 
 
