@@ -74,6 +74,9 @@ public class ProblemSet2 {
 
 
 
+
+
+
         /*
          * Exercise 5.
          *
@@ -123,8 +126,6 @@ public class ProblemSet2 {
          System.out.println("PERIMETER : " + String.format("%.2f", perimeterRectangle));
          System.out.println("DIAGONAL  : " + String.format("%.2f", diagonalRectangle));
 
-
-
         /*
          * Exercise 8.
          *
@@ -149,12 +150,35 @@ public class ProblemSet2 {
          */
 
 
+            System.out.print("\nEnter a String: ");
+            String reverseString = in.nextLine();
+
+
+            int formula = Math.round(reverseString.length() / 2);
+
+            String firstHalf = reverseString.substring(0, formula);
+            String secondHalf = reverseString.substring(formula);
+
+            System.out.println("\n" + secondHalf + firstHalf );
+
+
+
 
         /*
          * Exercise 10.
          *
          * Given a first, middle, and last name, print the corresponding initials.
          */
+
+         System.out.print("\nEnter your first name: ");
+         String firstNameInitial = in.nextLine();
+         System.out.print("Enter your middle name: ");
+         String middleNameInitial = in.nextLine();
+         System.out.print("Enter your last name: ");
+         String lastNameInitial = in.nextLine();
+
+         System.out.println("\n" + firstNameInitial.charAt(0) + middleNameInitial.charAt(0) + lastNameInitial.charAt(0));
+
 
 
 
