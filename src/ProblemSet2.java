@@ -72,10 +72,24 @@ public class ProblemSet2 {
          * and inches.
          */
 
+         final double MILES_TO_INCHES = 63360;
+         final double YARDS_TO_INCHES = 36;
+         final double FEET_TO_INCHES = 12;
 
+         System.out.print("\nEnter a number of inches: ");
+         double numberOfInches = in.nextDouble();
 
+         double miles = Math.floor(numberOfInches / MILES_TO_INCHES);
+         numberOfInches = numberOfInches - (miles * MILES_TO_INCHES);
+         double yards = Math.floor(numberOfInches / YARDS_TO_INCHES);
+         numberOfInches = numberOfInches - (yards * YARDS_TO_INCHES);
+         double feet = Math.floor(numberOfInches / FEET_TO_INCHES);
+         numberOfInches = numberOfInches - (feet * FEET_TO_INCHES);
 
-
+         System.out.println("\nMILES  : " + String.format("%.0f", miles));
+         System.out.println("YARDS  : " + String.format("%.0f", yards));
+         System.out.println("FEET   : " + String.format("%.0f", feet));
+         System.out.println("INCHES : " + String.format("%.0f", numberOfInches));
 
         /*
          * Exercise 5.
@@ -84,14 +98,26 @@ public class ProblemSet2 {
          * meters, and centimeters.
          */
 
+         final double KILOMETERS_TO_CM = 100000;
+         final double METERS_TO_CM = 100;
 
+         System.out.print("\nEnter a number of centimeters: ");
+         double numberOfCentimeters = in.nextDouble();
+
+         double kilometers = Math.floor(numberOfCentimeters / KILOMETERS_TO_CM);
+         numberOfCentimeters = numberOfCentimeters - (kilometers * KILOMETERS_TO_CM);
+         double meters = Math.floor(numberOfCentimeters / METERS_TO_CM);
+         numberOfCentimeters = numberOfCentimeters - (meters * METERS_TO_CM);
+
+         System.out.println("\nKILOMETERS  : " + String.format("%.0f", kilometers));
+         System.out.println("METERS      : " + String.format("%.0f", meters));
+         System.out.println("CENTIMETERS : " + String.format("%.0f", numberOfCentimeters));
 
         /*
          * Exercise 6.
          *
          * Given a diameter, print the area and circumference of the corresponding circle.
          */
-
 
          System.out.print("\nEnter a diameter: ");
          double circleDiameter = in.nextDouble();
@@ -103,7 +129,6 @@ public class ProblemSet2 {
 
          System.out.println("\nAREA          : " + String.format("%.2f", areaCircle));
          System.out.println("CIRCUMFERENCE : " + String.format("%.2f", circumferenceCircle));
-
 
         /*
          * Exercise 7.
@@ -142,27 +167,20 @@ public class ProblemSet2 {
          System.out.println("\nAREA      : " + String.format("%.2f", areaHexagon));
          System.out.println("PERIMETER : " + String.format("%.2f", perimeterHexagon));
 
-
         /*
          * Exercise 9.
          *
          * Given a string, reverse and print the first and second halves of that string.
          */
 
+          System.out.print("\nEnter a String: ");
+          String reverseString = in.nextLine();
 
-            System.out.print("\nEnter a String: ");
-            String reverseString = in.nextLine();
+          int formula = Math.round(reverseString.length() / 2);
 
-
-            int formula = Math.round(reverseString.length() / 2);
-
-            String firstHalf = reverseString.substring(0, formula);
-            String secondHalf = reverseString.substring(formula);
-
-            System.out.println("\n" + secondHalf + firstHalf );
-
-
-
+          String firstHalf = reverseString.substring(0, formula);
+          String secondHalf = reverseString.substring(formula);
+          System.out.println("\n" + secondHalf + firstHalf );
 
         /*
          * Exercise 10.
@@ -178,9 +196,6 @@ public class ProblemSet2 {
          String lastNameInitial = in.nextLine();
 
          System.out.println("\n" + firstNameInitial.charAt(0) + middleNameInitial.charAt(0) + lastNameInitial.charAt(0));
-
-
-
 
         in.close();
     }
