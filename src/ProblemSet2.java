@@ -54,7 +54,30 @@ public class ProblemSet2 {
          * bills, quarters, dimes, nickels, and pennies needed to produce this amount.
          */
 
+         final double DOLLAR = 1.00;
+         final double QUARTER = 0.25;
+         final double DIME = 0.10;
+         final double NICKEL = 0.05;
+         final double PENNY = 0.01;
 
+         System.out.print("\nEnter a dollar amount: ");
+         double dollarAmountSmall = in.nextDouble(); // named "dollarAmountSmall" since the range is between 0 and 1.
+
+         double dollars = Math.floor(dollarAmountSmall / DOLLAR);
+         dollarAmountSmall = dollarAmountSmall - (dollars * DOLLAR);
+         double quarters = Math.floor(dollarAmountSmall / QUARTER);
+         dollarAmountSmall = dollarAmountSmall - (quarters * QUARTER);
+         double dimes = Math.floor(dollarAmountSmall / DIME);
+         dollarAmountSmall = dollarAmountSmall - (dimes * DIME);
+         double nickels =Math.floor(dollarAmountSmall / NICKEL);
+         dollarAmountSmall = dollarAmountSmall - (nickels * NICKEL);
+         double pennies = Math.floor(dollarAmountSmall / PENNY);
+
+         System.out.println("\nDOLLARS  : " + String.format("%.0f", dollars));
+         System.out.println("QUARTERS : " + String.format("%.0f", quarters));
+         System.out.println("DIMES    : " + String.format("%.0f", dimes));
+         System.out.println("NICKELS  : " + String.format("%.0f", nickels));
+         System.out.println("PENNIES  : " + String.format("%.0f", pennies));
 
         /*
          * Exercise 3.
@@ -63,7 +86,31 @@ public class ProblemSet2 {
          * bills and coins needed to produce this amount.
          */
 
+         final double TEN_DOLLAR_BILL = 10.00;
+         final double FIVE_DOLLAR_BILL = 5.00;
 
+         System.out.print("\nEnter a dollar amount: ");
+         double dollarAmountLarge = in.nextDouble(); // named "dollarAmountLarge" since the range is between 0 and 20.
+
+         double tenDollarBills = Math.floor(dollarAmountLarge / TEN_DOLLAR_BILL);
+         dollarAmountLarge = dollarAmountLarge - (tenDollarBills * TEN_DOLLAR_BILL);
+         double fiveDollarBills = Math.floor(dollarAmountLarge / FIVE_DOLLAR_BILL);
+         dollarAmountLarge = dollarAmountLarge - (fiveDollarBills * FIVE_DOLLAR_BILL);
+         dollars = Math.floor(dollarAmountLarge / DOLLAR);
+         dollarAmountLarge = dollarAmountLarge - (dollars * DOLLAR);
+         quarters = Math.floor(dollarAmountLarge / QUARTER);
+         dollarAmountLarge = dollarAmountLarge - (quarters * QUARTER);
+         dimes = Math.floor(dollarAmountLarge / DIME);
+         dollarAmountLarge = dollarAmountLarge - (dimes * DIME);
+         nickels = Math.floor(dollarAmountLarge / NICKEL);
+         dollarAmountLarge = dollarAmountLarge - (nickels * NICKEL);
+         pennies = Math.floor(dollarAmountLarge / 0.01 );
+
+         double totalBills = tenDollarBills + fiveDollarBills + dollars;
+         double totalCoins = quarters + dimes + nickels + pennies;
+
+         System.out.println("\nBILLS  : " + String.format("%.0f", totalBills));
+         System.out.println("COINS  : " + String.format("%.0f", totalCoins));
 
         /*
          * Exercise 4.
